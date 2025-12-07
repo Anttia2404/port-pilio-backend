@@ -8,6 +8,6 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String sayHello() {
-        return "Xin chào, Spring Boot đã chạy!";
+        return "Xin chào, Spring Boot đã chạy rồi nha!";
     }
 }

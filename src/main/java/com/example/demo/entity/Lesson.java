@@ -3,6 +3,7 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 import com.example.demo.entity.Week;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "lesson")
@@ -26,6 +27,13 @@ public class Lesson {
 
     @Column(name = "deploy_link")
     private String deployLink;
+
+    @Column(name = "is_viewed", nullable = false)
+    private Boolean isViewed = false;
+
+    @Column(name = "viewed_at")
+    private LocalDateTime viewedAt;
+
 
     public Lesson() {
     }
@@ -76,5 +84,21 @@ public class Lesson {
 
     public void setWeek(Week week) {
         this.week = week;
+    }
+
+    public Boolean getIsViewed() {
+        return isViewed;
+    }
+
+    public void setIsViewed(Boolean isViewed) {
+        this.isViewed = isViewed;
+    }
+
+    public LocalDateTime getViewedAt() {
+        return viewedAt;
+    }
+
+    public void setViewedAt(LocalDateTime viewedAt) {
+        this.viewedAt = viewedAt;
     }
 }
